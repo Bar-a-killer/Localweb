@@ -1,0 +1,114 @@
+/* 全局樣式設置 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 容器樣式 */
+.container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* 標題樣式 */
+h1,
+h2 {
+    text-align: center;
+    color: #444;
+}
+
+/* 消息列表樣式 */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+ul li strong {
+    color: #007BFF;
+}
+
+/* 右下角按鈕樣式 */
+.toggle-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* 表單樣式 */
+#sendForm {
+    position: absolute;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out, padding 0.5s ease-out;
+    background: #ffffff;
+    padding: 0; /* 初始狀態無填充 */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(-20px); /* 初始狀態有些微上移效果 */
+}
+
+/* 表單顯示樣式 */
+#sendForm.show {
+    max-height: 500px; /* 根據表單實際高度調整 */
+    padding: 15px;
+    opacity: 1;
+    transform: translateY(0); /* 回到正常位置 */
+}
+
+/* 其他樣式 */
+input[type="text"], textarea {
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}

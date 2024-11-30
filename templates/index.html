@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Message Board</h1>
+        <!-- 發送表單 -->
+        <div id="sendForm">
+            <form action="/" method="post">
+                <label>Name (no need to be real):</label>
+                <input type="text" name="name" value="{{ name }}" required><br><br>
+                <label>The message:</label>
+                <textarea name="message" rows="5" cols="30" required></textarea>
+                <input type="submit" value="Send">
+            </form>
+        </div>
+        <button class="toggle-button" id="toggleButton">Send something</button>
+
+        <h2>Message group</h2>
+        {% if messages %}
+            <ul>
+                {% for msg in messages %}
+                    <li><strong>{{ msg['name'] }}:</strong> {{ msg['message'] }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>There is no message here now. Maybe you can go play Minecraft?</p>
+        {% endif %}
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
